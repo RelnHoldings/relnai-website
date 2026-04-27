@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — StatTap | RelnAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900&family=Barlow+Condensed:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #07090d; --bg2: #0b0f17; --surface: #101620;
+      --border: rgba(255,255,255,0.06); --border2: rgba(255,255,255,0.12);
+      --accent: #00c8ff; --text: #dde3ef; --muted: #5a6580; --muted2: #8a96b0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+    body::after {
+      content: ''; position: fixed; inset: 0; z-index: 999; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 60px; height: 72px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(7,9,13,0.88); backdrop-filter: blur(16px);
+    }
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.5rem;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo-mark {
+      width: 28px; height: 28px; background: var(--accent);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      display: inline-block; flex-shrink: 0;
+    }
+    nav ul { list-style: none; display: flex; align-items: center; gap: 40px; }
+    nav a {
+      color: var(--muted2); text-decoration: none; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; transition: color 0.2s;
+    }
+    nav a:hover { color: var(--text); }
+
+    /* ─── DOCUMENT LAYOUT ─── */
+    .doc-hero {
+      padding: 140px 60px 80px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg2);
+    }
+    .doc-hero-inner { max-width: 900px; margin: 0 auto; }
+    .doc-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--accent); display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
+    }
+    .doc-eyebrow::before { content: ''; display: block; width: 30px; height: 1px; background: var(--accent); }
+    .doc-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem); font-weight: 900;
+      line-height: 0.92; letter-spacing: -0.02em; text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .doc-meta {
+      display: flex; gap: 40px; flex-wrap: wrap;
+      font-size: 0.8rem; color: var(--muted); font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .doc-meta span { color: var(--muted2); }
+
+    .doc-body { max-width: 900px; margin: 0 auto; padding: 80px 60px 120px; }
+
+    .doc-section { margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--border); }
+    .doc-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .doc-section-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 12px;
+    }
+    h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.6rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.02em; color: var(--text); margin-bottom: 24px;
+    }
+    h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.04em; color: var(--text); margin: 28px 0 12px;
+    }
+    p { color: var(--muted2); font-size: 0.95rem; line-height: 1.85; font-weight: 300; margin-bottom: 16px; }
+    p:last-child { margin-bottom: 0; }
+    p strong { color: var(--text); font-weight: 500; }
+    ul.doc-list { list-style: none; display: flex; flex-direction: column; gap: 0; margin: 16px 0; }
+    ul.doc-list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 11px 0; border-bottom: 1px solid var(--border);
+      font-size: 0.9rem; color: var(--muted2); line-height: 1.6; font-weight: 300;
+    }
+    ul.doc-list li:first-child { border-top: 1px solid var(--border); }
+    .li-dot { color: var(--accent); font-size: 0.5rem; margin-top: 5px; flex-shrink: 0; font-weight: 900; }
+    .highlight-box {
+      border: 1px solid rgba(0,200,255,0.2); background: rgba(0,200,255,0.04);
+      padding: 24px 28px; margin: 24px 0;
+      border-left: 2px solid var(--accent);
+    }
+    .highlight-box p { margin-bottom: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid var(--border); padding: 44px 60px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 40px;
+    }
+    .footer-logo-wrap { display: flex; align-items: center; gap: 10px; }
+    .footer-logo-text { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.2rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    footer nav ul { gap: 28px; justify-content: center; }
+    .footer-right { text-align: right; font-size: 0.76rem; color: var(--muted); line-height: 1.9; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.06em; }
+    .footer-right a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-right a:hover { color: var(--accent); }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      nav ul { display: none; }
+      .doc-hero { padding: 120px 24px 60px; }
+      .doc-body { padding: 60px 24px 80px; }
+      footer { grid-template-columns: 1fr; text-align: center; padding: 40px 24px; }
+      footer nav ul { justify-content: center; }
+      .footer-right { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-mark"></div>
+      RelnAI
+    </a>
+    <ul>
+      <li><a href="/stattap">StatTap</a></li>
+      <li><a href="/stattap/terms">Terms</a></li>
+      <li><a href="/">RelnAI</a></li>
+    </ul>
+  </nav>
+
+  <div class="doc-hero">
+    <div class="doc-hero-inner">
+      <div class="doc-eyebrow">StatTap — Legal</div>
+      <div class="doc-title">Privacy<br/>Policy</div>
+      <div class="doc-meta">
+        Effective Date: <span>May 1, 2026</span>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        Last Updated: <span>May 1, 2026</span>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        Operated by: <span>Reln Holdings LLC</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-body">
+
+    <div class="doc-section">
+      <div class="doc-section-num">Section 01</div>
+      <h2>Introduction</h2>
+      <p>Welcome to StatTap ("the App"), a youth sports stat-tracking application operated by <strong>Reln Holdings LLC</strong> ("we," "us," or "our"), an Ohio limited liability company. We are committed to protecting the privacy of our users and the children whose information is managed through the App.</p>
+      <p>This Privacy Policy explains what information we collect, how we use it, with whom we share it, and your rights regarding that information. By using StatTap, you agree to the practices described in this policy.</p>
+      <p>Questions or concerns? Contact us at <a href="mailto:privacy@relnai.com">privacy@relnai.com</a>.</p>
+    </div>
+
+    <div class="doc-section">
+      <div class="doc-section-num">Section 02</div>
+      <h2>Who Uses StatTap</h2>
+      <p>StatTap is designed for use by <strong>parents and legal guardians</strong> ("parents") who track athletic performance data on behalf of their minor children ("players"). Children do not create accounts or register directly.</p>
+      <p>Children may access a limited, read-only "Kids View" of their own stats using a unique player code generated by their parent. StatTap is not directed at children under 13, and we do not knowingly allow children under 13 to create accounts or provide personal information directly to us.</p>
+    </div>
+
+    <div class="doc-section">
+      <div class="doc-section-num">Section 03</div>
+      <h2>Information We Collect</h2>
+      <h3>Parent Account</h3>
+      <p>When you create a parent account, we collect:</p>
+      <ul class="doc-list">
+        <li><span class="li-dot">◆</span>Full name</li>
+        <li><span class="li-dot">◆</span>Email address</li>
+        <li><span class="li-dot">◆</span>Password (stored in encrypted form via Supabase Auth)</li>
+        <li><span class="li-dot">◆</span>Subscription tier (free or premium)</li>
+      </ul>
+      <h3>Player Profiles</h3>
+      <p>When you create a player profile for your child, you may provide:</p>
+      <ul class="doc-list">
+        <li><span class="li-dot">◆</span>Player name</li>
+        <li><span class="li-dot">◆</span>Date of birth (used to calculate age only)</li>
+        <li><span class="li-dot">◆</span>A system-generated unique player code for Kids View access</li>
+        <li><span class="li-dot">◆</span>Sport-specific data: jersey number, team name, primary position, preferred stat selections — stored per sport</li>
+      </ul>
+      <h3>Game and Performance Data</h3>
+      <p>When you record games, we collect game date, opponent name, sport, period/set information, team scores, in-game stat events and point values, and season and tournament associations.</p>
+      <h3>Achievement and Points Data</h3>
+      <p>The App tracks parent engagement through a gamified achievement system, including XP earned, current tier (Stone through Diamond), and achievements earned with their trophy levels.</p>
+      <h3>Automatically Collected Information</h3>
+      <p>We do not collect device identifiers, advertising IDs, or precise location data. Standard server logs maintained by Supabase may capture IP addresses and request metadata for security and debugging purposes.</p>
+    </div>
+
+    <div class="doc-section">
+      <div class="doc-section-num">Section 04</div>
+      <h2>How We Use Your Information</h2>
+      <p>We use the information we collect to create and manage your account, provide stat-tracking and achievement features, enable the Kids View, process subscriptions, send transactional communications, improve the App, and comply with legal obligations.</p>
+      <div class="highlight-box">
+        <p><strong>We do not use children's data for advertising, behavioral profiling, or any purpose other than providing the stat-tracking features you have set up on their behalf.</strong></p>
+      </div>
+    </div>
+
+    <div class="doc-section">
+      <div class="doc-section-num">Section 05</div>
+      <h2>Children's Privacy — COPPA Compliance</h2>
+      <p>StatTap is designed with children's privacy as a priority and complies with the <strong>Children's Online Privacy Protection Act (COPPA)</strong>.</p>
+      <p>Children do not create accounts. All accounts are created by parents or legal guardians. By creating a player profile for a child, you represent that you are that child's parent or legal guardian and that you consent to the collection and use of that child's information as described in this policy.</p>
+      <p>What we collect about children is limited to: name, date of birth, sport-specific profile information, and athletic performance data entered by the parent. Children's read-only access is provided through the Kids View feature only — children cannot edit data, create accounts, or communicate with others through the App.</p>
+      <p><strong>Parents may at any time:</strong></p>
+      <ul class="doc-list">
+        <li><span class="li-dot">◆</span>Review the information collected about their child</li>
+        <li><span class="li-dot">◆</span>Request deletion of their child's data</li>
+        <li><span class="li-dot">◆</span>Revoke consent by deleting the player profile or closing their account</li>
+      </ul>
+      <p style="margin-top:16px">To exercise any of these rights, contact us at <a href="mailto:privacy@relnai.com">privacy@relnai.com</a>.</p>
+    </div>
+
+    <div class="doc-section">
+      <div class="doc-section-num">Section 06</div>
+      <h2>How We Share Your Information</h2>
+      <p><strong>We do not sell your personal information or your child's information to third parties.</strong></p>
+      <p>We share information only in the following limited circumstances:</p>
+      <ul class="doc-list">
+        <li><span class="li-dot">◆</span><strong>Service Providers.</strong> We use Supabase (supabase.com) as our backend database and authentication provider. Supabase processes data on our behalf under a data processing agreement.</li>
+        <li><span class="li-dot">◆</span><strong>Subscription Processing.</strong> Premium subscriptions are processed through RevenueCat and the Apple App Store or Google Play Store. These providers have their own privacy policies governing payment data, which we do not access or store.</li>
+        <li><span class="li-dot">◆</span><strong>Legal Requirements.</strong> We may disclose information if required by law, court order, or governmental authority.</li>
+        <li><span class="li-dot">◆</span><strong>Business Transfers.</strong> In the event of a merger, acquisition, or sale of assets, user information may be transferred. We will provide notice before any such transfer.</li>
+      </ul>
+    </div>
+
+    <div class="doc-section">
+      <div class="doc-section-num">Section 07</div>
+      <h2>Data Retention</h2>
+      <p>We retain your account and player data for as long as your account is active. If you delete a player profile, all associated game data, stats, and achievement records are permanently deleted. If you delete your account, all data is permanently deleted. We may retain certain records for a limited period as required by law.</p>
+    </div>
+
+    <div class="doc-section">
+      <div class="doc-section-num">Section 08</div>
+      <h2>Security</h2>
+      <p>We take reasonable technical and organizational measures to protect your information, including encrypted authentication via Supabase Auth, row-level security policies on all database tables, and HTTPS encryption for all data in transit. No method of transmission over the Internet is 100% secure. We encourage you to use a strong, unique password.</p>
+    </div>
+
+    <div class="doc-section">
+      <div class="doc-section-num">Section 09</div>
+      <h2>Your Rights</h2>
+      <p>Depending on your location, you may have rights including the right to access, correct, or delete your personal information. To exercise any of these rights, contact us at <a href="mailto:privacy@relnai.com">privacy@relnai.com</a>. We will respond within 30 days.</p>
+      <p><strong>California residents</strong> may have additional rights under the California Consumer Privacy Act (CCPA). We do not sell personal information.</p>
+      <p><strong>Parents</strong> may review, correct, or request deletion of their child's information at any time by contacting <a href="mailto:privacy@relnai.com">privacy@relnai.com</a> or by managing profiles directly within the App.</p>
+    </div>
+
+    <div class="doc-section">
+      <div class="doc-section-num">Section 10</div>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date at the top of this page. For material changes, we will provide notice through the App or by email. Your continued use of StatTap after changes are posted constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <div class="doc-section">
+      <div class="doc-section-num">Section 11</div>
+      <h2>Contact Us</h2>
+      <p><strong>Reln Holdings LLC</strong><br/>
+      5873 Bayside Ridge Dr<br/>
+      Galena, OH 43021</p>
+      <p>Email: <a href="mailto:privacy@relnai.com">privacy@relnai.com</a></p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-logo-wrap">
+      <div class="nav-logo-mark" style="width:22px;height:22px"></div>
+      <div class="footer-logo-text">StatTap</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/stattap">StatTap</a></li>
+        <li><a href="/stattap/terms">Terms</a></li>
+        <li><a href="/">RelnAI</a></li>
+      </ul>
+    </nav>
+    <div class="footer-right">
+      © 2026 Reln Holdings LLC<br/>
+      Powell, Ohio, United States<br/>
+      <a href="/stattap/privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/stattap/terms">Terms of Service</a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account — StatTap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0e13;
+      --surface: #111820;
+      --border: #1e2d3d;
+      --cyan: #00d4e8;
+      --cyan-dim: rgba(0, 212, 232, 0.12);
+      --text: #e8edf2;
+      --text-muted: #7a8a99;
+      --red: #ff4d4d;
+      --red-dim: rgba(255, 77, 77, 0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Barlow', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0,212,232,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .container { width: 100%; max-width: 560px; }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--cyan);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--bg);
+    }
+
+    .logo-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--text);
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--red), transparent);
+      opacity: 0.6;
+    }
+
+    .warning-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--red-dim);
+      border: 1px solid rgba(255,77,77,0.25);
+      color: var(--red);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.75rem;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .info-block {
+      background: var(--cyan-dim);
+      border: 1px solid rgba(0,212,232,0.2);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .info-block strong { color: var(--cyan); font-weight: 500; }
+
+    .steps { margin-bottom: 2rem; }
+
+    .steps-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 0.875rem;
+    }
+
+    .step-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--cyan-dim);
+      border: 1px solid rgba(0,212,232,0.3);
+      color: var(--cyan);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .step p strong { color: var(--text); font-weight: 500; }
+
+    .cta-button {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      background: var(--red);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 10px;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+
+    .cta-button:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .or-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+
+    .or-divider::before, .or-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .or-divider span { font-size: 0.8rem; color: var(--text-muted); }
+
+    .email-link {
+      display: block;
+      width: 100%;
+      padding: 0.9rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .email-link:hover { border-color: var(--cyan); color: var(--cyan); }
+
+    .footer-note {
+      margin-top: 1.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .footer-note a { color: var(--cyan); text-decoration: none; }
+
+    .page-footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    .page-footer a { color: var(--text-muted); text-decoration: none; }
+    .page-footer a:hover { color: var(--cyan); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="https://relnai.com" class="logo">
+      <div class="logo-mark">ST</div>
+      <span class="logo-text">StatTap</span>
+    </a>
+
+    <div class="card">
+      <div class="warning-badge">⚠ Permanent Action</div>
+      <h1>Delete Your Account</h1>
+      <p class="subtitle">Submitting a deletion request will permanently remove your StatTap account and all associated data, including player profiles, stats, and game history.</p>
+
+      <div class="info-block">
+        <strong>What gets deleted:</strong> Your account credentials, all player profiles, stat history, game records, season and tournament data, and achievement progress. This action cannot be undone.
+      </div>
+
+      <div class="steps">
+        <div class="steps-title">How it works</div>
+        <div class="step">
+          <div class="step-num">1</div>
+          <p>Send your request using the button below. Include the email address associated with your StatTap account.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <p>We'll verify your identity and confirm the request within <strong>2 business days</strong>.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <p>Your account and all data will be <strong>permanently deleted within 30 days</strong> of confirmation.</p>
+        </div>
+      </div>
+
+      <a class="cta-button" href="mailto:support@relnai.com?subject=Account%20Deletion%20Request&body=Please%20delete%20my%20StatTap%20account.%0A%0AEmail%20address%20on%20my%20account%3A%20%5Byour%20email%5D%0A%0AI%20understand%20this%20is%20permanent%20and%20cannot%20be%20undone.">
+        Request Account Deletion
+      </a>
+
+      <div class="or-divider"><span>or email us directly</span></div>
+
+      <a class="email-link" href="mailto:support@relnai.com">support@relnai.com</a>
+
+      <div class="footer-note">
+        Questions? Visit our <a href="https://relnai.com">website</a> or review our <a href="https://relnai.com/privacy">Privacy Policy</a>.<br>StatTap is a product of Reln Holdings LLC.
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <a href="https://relnai.com">← Back to relnai.com</a>
+    </div>
+  </div>
+</body>
+</html>

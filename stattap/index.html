@@ -43,15 +43,15 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 500;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 60px; height: 72px;
-      border-bottom: 1px solid var(--border);
-      background: rgba(7,9,13,0.98);
+      border-bottom: 1px solid rgba(0, 200, 255, 0.25);
+      background: rgba(7, 9, 13, 0.98);
       backdrop-filter: blur(16px);
     }
     .nav-logo {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 800; font-size: 1.5rem;
       letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--text); text-decoration: none;
+      color: #ffffff; text-decoration: none;
       display: flex; align-items: center; gap: 10px;
     }
     .nav-logo-mark {
@@ -62,12 +62,12 @@
     }
     nav ul { list-style: none; display: flex; align-items: center; gap: 40px; }
     nav a {
-      color: var(--muted2); text-decoration: none;
+      color: #ffffff; text-decoration: none;
       font-size: 0.78rem; font-weight: 600;
       letter-spacing: 0.14em; text-transform: uppercase;
       transition: color 0.2s;
     }
-    nav a:hover { color: var(--text); }
+    nav a:hover { color: var(--accent); }
     .nav-btn {
       border: 1px solid var(--accent) !important;
       color: var(--accent) !important;
@@ -175,7 +175,7 @@
 
     /* ─── MARQUEE ─── */
     .marquee-strip {
-      border-top: 1px solid var(--border); border-bottom: 1px solid rgba(0, 200, 255, 0.2);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
       padding: 15px 0; overflow: hidden; background: var(--bg2);
     }
     .marquee-track { display: flex; animation: marquee 30s linear infinite; white-space: nowrap; }
@@ -329,9 +329,6 @@
     .footer-right a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .footer-right a:hover { color: var(--accent); }
 
-    .status-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 8px var(--accent); animation: blink 2s ease-in-out infinite; display: inline-block; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
     .reveal { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.hidden { opacity: 0; transform: translateY(28px); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -372,7 +369,7 @@
       <li><a href="#sports">Sports</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="/stattap/delete-account">Delete Account</a></li>
-      <li><a href="/" >RelnAI</a></li>
+      <li><a href="/">RelnAI</a></li>
       <li><a href="#download" class="nav-btn">Download</a></li>
     </ul>
   </nav>
@@ -496,30 +493,12 @@
         <p>StatTap supports six sports out of the box — each with its own stat set, scoring system, and period structure. Add sports to a player profile and switch between them on the home screen.</p>
       </div>
       <div class="sports-grid reveal">
-        <div class="sport-card">
-          <span class="sport-emoji">🏐</span>
-          <div class="sport-name">Volleyball</div>
-        </div>
-        <div class="sport-card">
-          <span class="sport-emoji">🏀</span>
-          <div class="sport-name">Basketball</div>
-        </div>
-        <div class="sport-card">
-          <span class="sport-emoji">⚽</span>
-          <div class="sport-name">Soccer</div>
-        </div>
-        <div class="sport-card">
-          <span class="sport-emoji">⚾</span>
-          <div class="sport-name">Baseball</div>
-        </div>
-        <div class="sport-card">
-          <span class="sport-emoji">🥎</span>
-          <div class="sport-name">Softball</div>
-        </div>
-        <div class="sport-card">
-          <span class="sport-emoji">🏈</span>
-          <div class="sport-name">Football</div>
-        </div>
+        <div class="sport-card"><span class="sport-emoji">🏐</span><div class="sport-name">Volleyball</div></div>
+        <div class="sport-card"><span class="sport-emoji">🏀</span><div class="sport-name">Basketball</div></div>
+        <div class="sport-card"><span class="sport-emoji">⚽</span><div class="sport-name">Soccer</div></div>
+        <div class="sport-card"><span class="sport-emoji">⚾</span><div class="sport-name">Baseball</div></div>
+        <div class="sport-card"><span class="sport-emoji">🥎</span><div class="sport-name">Softball</div></div>
+        <div class="sport-card"><span class="sport-emoji">🏈</span><div class="sport-name">Football</div></div>
       </div>
     </div>
   </section>
@@ -552,7 +531,7 @@
       <div class="pricing-card featured">
         <div class="pricing-tier">Premium</div>
         <div class="pricing-price">$4.99 <span>/ month</span></div>
-        <div class="pricing-alt">or $44.99 / year — save ~25%</div>
+        <div class="pricing-alt">or $34.99 / year — cancel anytime</div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
           <li><span class="check">◆</span>Up to 5 player profiles</li>
